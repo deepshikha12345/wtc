@@ -46,7 +46,7 @@ class CsvImport implements ImportInterface
     {
         try {
             $import_directory_path = $this->directory->getPath('var');
-            $file_path = $import_directory_path.'/import1/'.$file;
+            $file_path = $import_directory_path.'/import/'.$file;
             if (!$this->file->isExists($file_path)) {
                 throw new LocalizedException(__('Invalid file path or no file found.'));
             }
