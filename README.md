@@ -60,6 +60,3 @@ Once we run our customer import script, we also need to make sure to re-index th
 
 Import customers from CSV or JSON file from command.
 
-## Screenshots
-
-![cli-help](/files/image.png)
