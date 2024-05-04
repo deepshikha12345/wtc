@@ -4,7 +4,7 @@ Import Customer with command in CSV or JSON format
 # Magento2 Module Wtc CustomerImport
 
 ## Functionalities
-Import Customer with command which is supplied via CSV or JSON format.
+Import Customer with command  via CSV or JSON format.
 
 ## Installation
 ### Via Zip file
