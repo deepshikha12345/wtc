@@ -26,16 +26,7 @@ class CustomersImports extends Customer
         $proceedData = $this->_prepareDataForUpdate($rowData);
         $entityCreate = array_merge($entityCreate, $proceedData[self::ENTITIES_TO_CREATE_KEY]);
         $entityUpdate = array_merge($entityUpdate, $proceedData[self::ENTITIES_TO_UPDATE_KEY]);
-        foreach ($proceedData[self::ATTRIBUTES_TO_SAVE_KEY] as $table => $customerAttributes) {
-            if (!isset($attributeSave[$table])) {
-                $attributeSave[$table] = [];
-            }
-            $attributeSave[$table] = array_diff_key(
-                $attributeSave[$table],
-                $customerAttributes
-            ) + $customerAttributes;
-        }
-        
+
         $this->updateItemsCounterStats($entityCreate, $entityUpdate, $entityDelete); //UpdateItemcounter using entiry
         
         /**
@@ -43,9 +34,6 @@ class CustomersImports extends Customer
         */
         if ($entityCreate || $entityUpdate) {
             $this->_saveCustomerEntities($entityCreate, $entityUpdate);
-        }
-        if ($attributeSave) {
-            $this->_saveCustomerAttributes($attributeSave);
         }
         
         return $entityCreate[0]['entity_id'] ?? $entityUpdate[0]['entity_id'] ?? null;
