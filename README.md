@@ -17,7 +17,7 @@ Import Customer with command  via CSV or JSON format.
 
 ### Via Composer
 
- - Install the module composer by running 'composer require Wtc/magento2-module-customerimport'
+ - Install the module composer by running 'composer require wtc/magento2-module-customerimport'
  - Enable the module by running 'php bin/magento module:enable Wtc_CustomerImport'
  - Run Magento commands
 
